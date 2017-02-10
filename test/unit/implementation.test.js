@@ -6,7 +6,7 @@ const ConfigFile = require('../../lib/implementation');
 
 const EzConfig = require('ez-config');
 const Sinon = require('sinon');
-const TestConfig = require('./.mm./fixtures/config/test.json');
+const TestConfig = require('./../fixtures/config/test.json');
 
 const Code = require('code');
 const Lab = require('lab');

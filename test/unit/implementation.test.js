@@ -88,7 +88,15 @@ describe('unit tests - implementation', () => {
                     expect(contents.routes[0].description).to.equal('Test endpoint for all clients');
                     expect(contents.routes[0].actions).to.be.an.array();
                     expect(contents.routes[0].actions[0]).to.be.an.object();
+                    expect(contents.routes[0].actions[0].name).to.equal('identities');
+                    expect(contents.routes[0].actions[0].type).to.equal('toki.procedure.identities');
                     expect(contents.routes[0].actions[1]).to.be.an.array();
+                    expect(contents.routes[0].actions[1][0]).to.be.an.object();
+                    expect(contents.routes[0].actions[1][0].name).to.equal('action 1');
+                    expect(contents.routes[0].actions[1][0].type).to.equal('http');
+                    expect(contents.routes[0].actions[1][1]).to.be.an.object();
+                    expect(contents.routes[0].actions[1][1].name).to.equal('action 2');
+                    expect(contents.routes[0].actions[1][1].type).to.equal('http');
                 });
         });
     });

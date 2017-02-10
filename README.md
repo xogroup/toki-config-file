@@ -108,5 +108,4 @@ module.exports = () => {
 ```
 
 <!-- Customize this if needed -->
-
 <!-- Anything Else (Sponsors, Links, Etc) -->

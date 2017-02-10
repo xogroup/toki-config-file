@@ -9,11 +9,9 @@ Lead Maintainer: [Rob Horrigan](https://github.com/robhorrigan)
 
 <!-- Badges Go Here -->
 
-<!-- Build Status from Travis -->
+<!-- Build Status from Travis --><!-- Security Scan from Snyk.io --><!-- Security Scan from NSP -->
 [![Build Status](https://travis-ci.org/xogroup/toki-config-file.svg?branch=master)](https://travis-ci.org/xogroup/toki-config-file)
-<!-- Security Scan from Snyk.io -->
 [![Known Vulnerabilities](https://snyk.io/test/github/xogroup/toki-config-file/badge.svg)](https://snyk.io/test/github/xogroup/toki-config-file)
-<!-- Security Scan from NSP -->
 [![NSP Status](https://nodesecurity.io/orgs/xo-group/projects/f49cc4e1-50db-40b1-9d18-b7a84b7f41eb/badge)](https://nodesecurity.io/orgs/xo-group/projects/f49cc4e1-50db-40b1-9d18-b7a84b7f41eb)
 
 <!-- End Badges -->

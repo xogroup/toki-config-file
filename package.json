@@ -11,6 +11,9 @@
     "type": "git",
     "url": "git+ssh://git@github.com/xogroup/toki-config-file.git"
   },
+  "engines": {
+    "node": ">=6.x.x"
+  },
   "keywords": [
     "toki-config-file"
   ],

@@ -104,6 +104,12 @@ Will load configuration at `config/production.js` or `config/production.json`
 
 See the [Toki Configuration Schema](https://github.com/xogroup/toki-config/blob/master/schema.md) for schema specification.
 
+### Example
+[Click here](https://github.com/xogroup/toki-config-file/blob/master/example.md) for an example
+
+### API Reference
+See [API Reference](https://github.com/xogroup/toki-config-file/blob/master/API.md)
+
 ## Development Setup
 
 ### Install Dependencies

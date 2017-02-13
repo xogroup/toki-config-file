@@ -28,9 +28,9 @@ Run tests locally.
 make test
 ```
 
-## Example
+## Getting Started
 To get started, create a `config` directory at the root of your project then add
-a `default.js` file with the following format:
+a `default.js` or `default.json` file with the following format:
 
 ```Javascript
 'use strict';
@@ -66,6 +66,37 @@ const configuration = {
 
 module.exports = configuration;
 ```
+OR
+```Javascript
+{
+    "toki": {
+        "routes": [
+            {
+                "path"       : "/example",
+                "httpAction" : "GET",
+                "tags"       : ["api"],
+                "description": "Example endpoint",
+                "actions"    : [
+                    {
+                        "name": "action 1",
+                        "type": "http"
+                    },
+                    [
+                        {
+                            "name": "action 2",
+                            "type": "http"
+                        },
+                        {
+                            "name": "action 3",
+                            "type": "http"
+                        }
+                    ]
+                ]
+            }
+        ]
+    }
+}
+```
 
 ***
 
@@ -74,9 +105,15 @@ NOTE: If set, toki-config will use your `NODE_ENV` to determine which configurat
 $: echo $NODE_ENV
 production
 ```
-Will load configuration at `config/production.js`
+Will load configuration at `config/production.js` or `config/production.json`
+
+**Obeys the import hierarchy described [here](https://github.com/lorenwest/node-config/wiki/Configuration-Files)
 
 ***
+
+## Configuration Schema
+
+<!-- TODO: Should link to schema definition in toki repo. -->
 
 ```Javascript
 'use strict';

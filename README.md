@@ -2,7 +2,7 @@
 > Loads configuration from static file and returns it as an object <!-- Repo Brief Description -->
 
 <!-- Long Description -->
-This is the static file configuration loader for the Toki project.
+This is the static file configuration loading submodule for the Toki project which is used by `toki-config` to load a toki configuration. See [toki](https://github.com/xogroup/toki) or [toki-config](https://github.com/xogroup/toki-config) for more details.
 
 <!-- Maintainer (Hint, probably you) -->
 Lead Maintainer: [Rob Horrigan](https://github.com/robhorrigan)
@@ -17,18 +17,6 @@ Lead Maintainer: [Rob Horrigan](https://github.com/robhorrigan)
 
 <!-- End Badges -->
 <!-- Quick Example -->
-## Install Dependencies
-Install the dependencies based on package.json.
-```Text
-make install
-```
-
-## Test Project
-Run tests locally.
-```Text
-make test
-```
-
 ## Getting Started
 To get started, create a `config` directory at the root of your project then add
 a `default.js` or `default.json` file with the following format:
@@ -112,67 +100,22 @@ Will load configuration at `config/production.js` or `config/production.json`
 
 ***
 
-## Configuration Schema
+### Toki Configuration Schema
 
-<!-- TODO: Should link to schema definition in toki repo. -->
-```Javascript
-//executable action
-action  = Joi.object().keys({
-    name       : Joi.string(),
+See the [Toki Configuration Schema](https://github.com/xogroup/toki-config/blob/master/schema.md) for schema specification.
 
-    //type is the custom action to be invoked
-    type       : Joi.string(),
+## Development Setup
 
-    description: Joi.string().optional()
-}),
-
-//parallel actions
-actions = Joi.array().items(action).min(2),
-
-//route configuration
-routes  = Joi.object().keys({
-    path       : Joi.string(),
-    httpAction : Joi.string().valid('GET', 'POST'),
-    tags       : Joi.array().items(Joi.string()).min(1),
-    description: Joi.string(),
-    actions    : Joi.array().items(action, actions).min(1)
-}),
-
-//Final overall schema
-toki  = Joi.object().keys({
-    routes: Joi.array().items(routes).min(1)
-});
+### Install Dependencies
+Install the dependencies based on package.json.
+```Text
+make install
 ```
 
-## Example
-
-```Javascript
-'use strict';
-
-const Promise = require('bluebird');
-const ConfigFile = require('toki-config-file');
-const configFile = new ConfigFile();
-
-const logConfig = () => {
-
-    configFile.get()
-        .then((configuration) => {
-            console.log(configuration.routes[0].path) // /example
-        })
-        .catch((err) => {
-            throw err;
-        });
-};
-
-module.exports = () => {
-
-    return Promise.resolve()
-        .bind()
-        .then(logConfig)
-        .catch(function(err) {
-            console.log(err);
-        })
-};
+### Test Project
+Run tests locally.
+```Text
+make test
 ```
 
 <!-- Customize this if needed -->
